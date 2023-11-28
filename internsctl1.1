@@ -1,0 +1,61 @@
+INTERNSCTL(1)
+
+NAME
+       internsctl - A CLI tool to manage system information and users
+
+SYNOPSIS
+       internsctl [OPTIONS] COMMAND
+
+DESCRIPTION
+       internsctl is a command-line tool that provides various functionalities
+       related to system information, user management, and file details.
+
+OPTIONS
+       -v, --version
+              Show the version of internsctl.
+
+       -h, --help
+              Display this help message.
+
+COMMANDS
+       cpu getinfo
+              Get CPU information using the lscpu command.
+
+       memory getinfo
+              Get memory information using the free command.
+
+       user create <username>
+              Create a new user with a corresponding home directory.
+
+       user list [--sudo-only]
+              List all regular users on the Linux server [with sudo permissions].
+
+       file getinfo [OPTIONS] <filename>
+              Get information about a specific file.
+
+FILE GETINFO OPTIONS
+       -s, --size
+              Print only the file size.
+
+       -p, --permissions
+              Print only file permissions.
+
+       -o, --owner
+              Print only the file owner.
+
+       -m, --last-modified
+              Print last modified date.
+
+EXAMPLES
+       To get CPU information:
+              $ internsctl cpu getinfo
+
+       To create a new user:
+              $ internsctl user create myuser
+
+       To list all users with sudo permissions:
+              $ internsctl user list --sudo-only
+
+       To get information about a file:
+              $ internsctl file getinfo -s example.txt
+
